@@ -1,0 +1,774 @@
+<!-- Created by aryan-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        /* Your existing styles here */
+        html {
+     height: 100%;
+     margin: 0;
+     overflow: hidden;
+}
+ .loader_page {
+     height: 100%;
+     width: 100%;
+     background: #ea4961;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: absolute;
+     animation: hide 1s infinite;
+     animation-delay: 10s;
+}
+@keyframes hide {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}
+ .loader {
+     position: relative;
+     width: 75px;
+     height: 100px;
+}
+ .loader__bar {
+     position: absolute;
+     bottom: 0;
+     width: 10px;
+     height: 50%;
+     background: #fff;
+     transform-origin: center bottom;
+     box-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
+}
+ .loader__bar:nth-child(1) {
+     left: 0px;
+     transform: scale(1, 0.2);
+     animation: barUp1 4s infinite;
+}
+ .loader__bar:nth-child(2) {
+     left: 15px;
+     transform: scale(1, 0.4);
+     animation: barUp2 4s infinite;
+}
+ .loader__bar:nth-child(3) {
+     left: 30px;
+     transform: scale(1, 0.6);
+     animation: barUp3 4s infinite;
+}
+ .loader__bar:nth-child(4) {
+     left: 45px;
+     transform: scale(1, 0.8);
+     animation: barUp4 4s infinite;
+}
+ .loader__bar:nth-child(5) {
+     left: 60px;
+     transform: scale(1, 1);
+     animation: barUp5 4s infinite;
+}
+ .loader__ball {
+     position: absolute;
+     bottom: 10px;
+     left: 0;
+     width: 10px;
+     height: 10px;
+     background: #fff;
+     border-radius: 50%;
+     animation: ball 4s infinite;
+}
+ @keyframes ball {
+     0% {
+         transform: translate(0, 0);
+    }
+     5% {
+         transform: translate(8px, -14px);
+    }
+     10% {
+         transform: translate(15px, -10px);
+    }
+     17% {
+         transform: translate(23px, -24px);
+    }
+     20% {
+         transform: translate(30px, -20px);
+    }
+     27% {
+         transform: translate(38px, -34px);
+    }
+     30% {
+         transform: translate(45px, -30px);
+    }
+     37% {
+         transform: translate(53px, -44px);
+    }
+     40% {
+         transform: translate(60px, -40px);
+    }
+     50% {
+         transform: translate(60px, 0);
+    }
+     57% {
+         transform: translate(53px, -14px);
+    }
+     60% {
+         transform: translate(45px, -10px);
+    }
+     67% {
+         transform: translate(37px, -24px);
+    }
+     70% {
+         transform: translate(30px, -20px);
+    }
+     77% {
+         transform: translate(22px, -34px);
+    }
+     80% {
+         transform: translate(15px, -30px);
+    }
+     87% {
+         transform: translate(7px, -44px);
+    }
+     90% {
+         transform: translate(0, -40px);
+    }
+     100% {
+         transform: translate(0, 0);
+    }
+}
+ @keyframes barUp1 {
+     0% {
+         transform: scale(1, 0.2);
+    }
+     40% {
+         transform: scale(1, 0.2);
+    }
+     50% {
+         transform: scale(1, 1);
+    }
+     90% {
+         transform: scale(1, 1);
+    }
+     100% {
+         transform: scale(1, 0.2);
+    }
+}
+ @keyframes barUp2 {
+     0% {
+         transform: scale(1, 0.4);
+    }
+     40% {
+         transform: scale(1, 0.4);
+    }
+     50% {
+         transform: scale(1, 0.8);
+    }
+     90% {
+         transform: scale(1, 0.8);
+    }
+     100% {
+         transform: scale(1, 0.4);
+    }
+}
+ @keyframes barUp3 {
+     0% {
+         transform: scale(1, 0.6);
+    }
+     100% {
+         transform: scale(1, 0.6);
+    }
+}
+ @keyframes barUp4 {
+     0% {
+         transform: scale(1, 0.8);
+    }
+     40% {
+         transform: scale(1, 0.8);
+    }
+     50% {
+         transform: scale(1, 0.4);
+    }
+     90% {
+         transform: scale(1, 0.4);
+    }
+     100% {
+         transform: scale(1, 0.8);
+    }
+}
+ @keyframes barUp5 {
+     0% {
+         transform: scale(1, 1);
+    }
+     40% {
+         transform: scale(1, 1);
+    }
+     50% {
+         transform: scale(1, 0.2);
+    }
+     90% {
+         transform: scale(1, 0.2);
+    }
+     100% {
+         transform: scale(1, 1);
+    }
+}
+.title {
+    font-family: "Montserrat";
+    text-align: center;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    letter-spacing: 1px;
+}
+
+h1 {
+    background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-transform: uppercase;
+    font-size: 120px;
+    line-height: .75;
+    margin: 10px 0;
+}
+/* styling my button */
+
+.white-mode {
+    text-decoration: none;
+    padding: 7px 10px;
+    background-color: #122;
+    border-radius: 3px;
+    color: #FFF;
+    transition: .35s ease-in-out;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    font-family: "Montserrat";
+}
+
+.white-mode:hover {
+    background-color: #FFF;
+    color: #122;
+}
+@keyframes mask-move {
+     0% {
+         transform: translateX(0);
+    }
+     100% {
+         transform: translateX(129px);
+    }
+}
+ @keyframes mask-inner-move {
+     0% {
+         transform: translateX(0);
+    }
+     100% {
+         transform: translateX(-129px);
+    }
+}
+ *, *:before, *:after {
+     box-sizing: border-box;
+}
+ body, html {
+     height: 100%;
+     overflow: hidden;
+}
+
+ .focus {
+     font-size: 3rem;
+     text-transform: uppercase;
+     color: white;
+     letter-spacing: 0.2rem;
+     line-height: 1;
+     position: relative;
+     width: 179px;
+}
+ .focus:before {
+     content: 'HAPPY';
+     filter: blur(1px);
+}
+ .focus:after {
+     content: '';
+     position: absolute;
+     width: 50px;
+     height: calc(100% + 8px);
+     top: -4px;
+     left: 0;
+     border-top: 2px solid;
+     border-bottom: 2px solid;
+     animation: mask-move 1s linear infinite alternate;
+}
+ .focus--mask {
+     overflow: hidden;
+     position: absolute;
+     width: 50px;
+     height: 100%;
+     top: 0;
+     left: 0;
+     background: #89cb66;
+     animation: mask-move 1s linear infinite alternate , hide 1s infinite 7s;
+}
+ .focus--mask-inner {
+     animation: mask-inner-move 1s linear infinite alternate;
+ }
+ .page1 {
+     opacity: 0;
+     animation: show 1s infinite 10.2s , hide 1s infinite 14s;
+     text-align: center;
+
+ }
+ @keyframes show {
+     from {
+         opacity: 1;
+     }
+     to {
+         opacity: 1;
+     }
+ }
+ .focus2 {
+     font-size: 3rem;
+     text-transform: uppercase;
+     color: white;
+     letter-spacing: 0.2rem;
+     line-height: 1;
+     position: relative;
+     width: 179px;
+}
+ .focus2:before {
+     content: 'NEW';
+     filter: blur(1px);
+}
+.focus3 {
+     font-size: 3rem;
+     text-transform: uppercase;
+     color: white;
+     letter-spacing: 0.2rem;
+     line-height: 1;
+     position: relative;
+     width: 179px;
+}
+ .focus3:before {
+     content: 'YEAR';
+     filter: blur(1px);
+}
+.page2 {
+    animation: show 1s infinite 15s;
+    opacity: 0;
+    width:100%;
+}
+.text {
+    font-size: 100px;
+    color: white;
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Pacifico');
+
+*, *:after, *:before{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  -webkit-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+}
+html{
+  background: #222048;
+  overflow: hidden;
+}
+.feliz{
+  width: 100%;
+  font-family: 'Pacifico', cursive;
+  font-size: 70px;
+  font-weight: 700;
+  color: #f48fb1;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  opacity: 0;
+  animation: vem_feliz 2s ease-in-out 22s forwards;
+}
+.ano_novo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 200px 100px 0px 0px;
+}
+.ano_novo>span{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  color: #7a8fe8;
+}
+span.seis{
+  position: absolute;
+  top: 50%;
+  right: 45%;
+  margin-right: -150px;
+  animation: vai_2016 5s ease-in-out 20s forwards;
+}
+span.sete{
+  position: absolute;
+  right: 0%;
+  margin-right: -120px;
+  animation: vem_2017 6s ease-in-out 15s forwards;
+}
+span.sete:before{
+  content: '';
+  width: 0px;
+  height: 6px;
+  display: block;
+  border-radius: 3px;
+  background: #7a8fe8;
+  transform: rotate(0deg);
+  transform-origin: left top;
+  position: absolute;
+  top: 55px;
+  left: 3px;
+  z-index: -1;
+  animation: entrega_balao 1s ease-in-out 11s;
+}
+.balao{
+  width: 100px;
+  height: 100px;
+  display: block;
+  background: #e8d57a;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  margin-top: -165px;
+  right: 0%;
+  margin-right: -200px;
+  animation: vem_e_vai_balao 12s ease-in-out forwards;
+  animation-delay: 13.5s;
+}
+.balao:before{
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 20px 10px;
+  border-color: transparent transparent #b19b32 transparent;
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  bottom: -10px;
+  z-index: -1;
+}
+.balao:after{
+  content: '';
+  width: 4px;
+  height: 100px;
+  display: block;
+  background: #fff;
+  border-radius: 0px 0px 3px 3px;
+  position: absolute;
+  left: 50%;
+  margin-left: -2px;
+  bottom: -110px;
+}
+.fogos{
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.fogos>div{
+  border: 2px solid #fff;
+  position: absolute;
+  opacity: 0;
+  animation: solta_fogos 1.5s ease-in-out 23s forwards;
+}
+.fogos>div.f1{
+  left: 20%;
+  top: 40%;
+}
+.fogos>div.f2{
+  left: 15%;
+  top: 70%;
+}
+.fogos>div.f3{
+  right: 20%;
+  top: 40%;
+}
+.fogos>div.f4{
+  right: 15%;
+  top: 70%;
+}
+.fogos>div span{
+  width: 6px;
+  height: 6px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: estoura_fogos 0.5s ease-in-out 24s forwards;
+}
+.fogos>div span:nth-child(1){
+  transform: rotate(0deg);
+}
+.fogos>div span:nth-child(2){
+  transform: rotate(120deg);
+}
+.fogos>div span:nth-child(3){
+  transform: rotate(240deg);
+}
+.fogos>div span:before{
+  content: '';
+  width: 2px;
+  height: 50px;
+  display: block;
+  background: #f5cc06;
+  position: absolute;
+  top: -60px;
+  left: 2px;
+}
+.fogos>div span:after{
+  content: '';
+  width: 2px;
+  height: 50px;
+  display: block;
+  background: #f5cc06;
+  position: absolute;
+  bottom: -60px;
+  left: 2px;
+}
+.fogos>div span i:before{
+  content: '';
+  width: 3px;
+  height: 3px;
+  display: block;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+}
+.fogos>div span i:after{
+  content: '';
+  width: 3px;
+  height: 3px;
+  display: block;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: -15px;
+  right: 10px;
+}
+a.author{
+  font-size: 12px;
+  text-decoration: none;
+  color: #f47c7c;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+@keyframes vem_2017 {
+  0% {
+    right: 0%;
+  }
+  66.6666% {
+    right: 50%;
+    margin-right: -800px;
+  }
+  90% {
+    right: 50%;
+    margin-right: -800px;
+  }
+  100% {
+    right: 50%;
+  }
+}
+@keyframes vem_e_vai_balao {
+  0% {
+    right: 0%;
+  }
+  40% {
+    right: 50%;
+    margin-right: -300px;
+  }
+  50% {
+    right: 50%;
+    margin-right: -200px;
+    top: 50%;
+  }
+  100% {
+    top: -100%;
+    right: 50%;
+  }
+}
+@keyframes entrega_balao {
+  0% {
+    transform: rotate(-30deg);
+    width: 40px;
+  }
+  100% {
+    transform: rotate(-150deg);
+    width: 70px;
+  }
+}
+@keyframes vai_2016 {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+@keyframes vem_feliz {
+  0% {
+    margin-top: 0px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: -200px;;
+    opacity: 1;
+  }
+}
+@keyframes solta_fogos {
+  0% {
+    margin-top: 100%;
+    opacity: 0;
+    width: 2px;
+    height: 30px;
+    display: block;
+    border-radius: 50%;
+  }
+  75% {
+    margin-top: 0%;
+    opacity: 1;
+    width: 2px;
+    height: 30px;
+    display: block;
+    border-radius: 50%;
+  }
+  80%{
+    margin-top: 0px;
+    margin-left: 0px;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    transform: scale(0.2);
+  }
+  100%{
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    transform: scale(1);
+  }
+}
+@keyframes estoura_fogos {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.anim {
+    transform: translate(25% , 50%);
+}
+    </style>
+</head>
+<body>
+    <div class="loader_page">
+        <div class="loader">
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__ball"></div>
+        </div>
+    </div>  
+    <div class="page1">
+        <div class="anim">   
+            <div class="focus">
+                <div class="focus--mask">
+                    <div class="focus--mask-inner">Happy</div>
+                </div>
+            </div>
+            <BR></BR>
+            <div class="focus2">
+                <div class="focus--mask">
+                    <div class="focus--mask-inner">New</div>
+                </div>
+            </div>
+            <BR></BR>
+            <div class="focus3">
+                <div class="focus--mask">
+                    <div class="focus--mask-inner">Year</div>
+                </div>
+            </div>
+        </div> 
+    </div>  
+    <div class="page2">
+        <div class="feliz">Happy new year</div>
+        <div class="ano_novo">
+            <span>20</span>
+            <span class="seis">23</span>
+            <span class="sete">24</span>
+            <div class="balao"></div>
+        </div>
+        <div class="fogos">
+            <div class="f1">
+                <span><i></i></span>
+                <span><i></i></span>
+                <span><i></i></span>
+            </div>
+            <!-- Add other firework elements here -->
+        </div>
+    </div>
+    <script>
+        setTimeout(() => {
+            // Prompt user for their name
+            swal({
+                title: "Happy New Year!",
+                text: "Enter your name:",
+                content: "input",
+                button: {
+                    text: "Submit",
+                    closeModal: false,
+                },
+            }).then((value) => {
+                if (value) {
+                    // Display personalized message
+                    swal({
+                        title: `Happy New Year, ${value}! 🎉🎊`,
+                        text: "A Very Happy New Year To You And Your Family 🎉🎊",
+                        icon: "success",
+                    });
+                } else {
+                    // Display generic message
+                    swal({
+                        title: "Happy New Year!",
+                        text: "A Very Happy New Year To You And Your Family 🎉🎊",
+                        icon: "success",
+                    });
+                }
+            });
+        }, 25000);
+    </script>
+</body>
+</html>
